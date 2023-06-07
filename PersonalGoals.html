@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(176, 229, 255, 1));
+      font-family: 'Montserrat';
+      font-weight: 700;
+      text-decoration-skip-ink: none;
+      color: #051D28;
+    }
+    
+    .banner {
+      height: 200px;
+      text-align: center;
+      border-bottom: solid 5px rgb(0,102,153);
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .section {
+      height: 85vh;
+      width: 50%;
+      position: relative;
+      display: flex;
+    }
+    
+    .section-break {
+      background-color: #e6e6e6;
+      width: 100%;
+      height: 15vh;
+      text-align: center;
+      border-bottom: #006699 solid 6px;
+      border-top: #006699 solid 6px;
+    }
+    
+    
+    /*tip gen */
+    
+    .section-break-tip {
+      background-color: #e6e6e6;
+      width: 100%;
+      height: 45vh;
+      text-align: center;
+      border-bottom: #006699 solid 6px;
+      border-top: #006699 solid 6px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #tip {
+      font-size: 17px;
+      text-align: center;
+    }
+    
+    /* tip gen en (get it lol) */
+    
+    .section-gradiant {
+      height: 85vh;
+      width: 50%;
+      position: relative;
+      display: flex;
+      background: linear-gradient(135deg, rgba(13, 113, 186, 0.8) 0%, rgba(13, 113, 186, 0.3));
+      color: #e6e6e6;
+    }
+    
+    @media screen and (max-width: 700px) {
+      .section {
+        width: 100%;
+        height: 70vh;
+      }
+      
+      .section-gradiant {
+        width: 100%;
+        height: 70vh;
+      }
+      
+      .section-break-tip {
+        background-color: #e6e6e6;
+        width: 100%;
+        height: 40vh;
+        text-align: center;
+        border-bottom: #006699 solid 6px;
+        border-top: #006699 solid 6px;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      #tip {
+        font-size: 14px;
+        text-align: center;
+      }
+  }
+   
+
+    .image-top-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: top left;
+    }
+
+    .image-top-left-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: top left;
+    }
+
+    .image-bottom-right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .top-left {
+      margin-right: 5%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+    }
+    
+    .top-left-gradiant {
+      margin-right: 5%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+    }
+    
+    .text-top-right {
+      margin-right: 5%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+      opacity: 0;
+      position: absolute;
+      font-size: 24px;
+      top: 10%;
+      transform: translateY(-15%) translateX(-5%);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    
+    .text-bottom-left {
+      margin-right: 5%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 5%;
+      opacity: 0;
+      position: absolute;
+      font-size: 24px;
+      top: 10%;
+      transform: translateY(-35%) translateX(0); /* Adjust translateY value */
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .slide-in {
+      opacity: 1;
+      transform: translateY(-15%) translateX(0);
+    }
+    
+        /* le basic styling for the navbar */
+    .navbar {
+      font-family: 'Montserrat';
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      background: linear-gradient(to left, rgba(0, 102, 153, 0.4), rgba(0, 102, 153, 1));
+      color: #fff;
+      padding: 14px;
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 421;
+      transition: top 0.575s ease-in-out;
+    }
+    
+    .navbar.hidden {
+      top: -250px;
+    }
+    
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+    }
+    
+    .navbar li {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      display: inline-block;
+      text-decoration: none;
+          
+    }
+    
+    .navbar li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: 0.35s;
+    }
+    
+    .navbar li a:hover {
+      transition: 0.55s;
+      color: #050f30;
+    }
+
+    #open {
+      text-decoration: underline 4px #ffc72c;
+      padding: 5px 10px;
+      transition: 0.35s;
+    }
+    
+    .site {
+      color: white;
+    }
+    
+    /* counter effects -> navbar */
+    
+    .counter-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      margin-top: 12px;
+      padding: 7px;
+      max-width: 100%;
+      margin-left: -3%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 25px;
+    }
+
+    #counter {
+        font-size: 20px;
+        transition: 0.18s;
+    }
+
+    .counter-text {
+        margin-left: 8px;
+        margin-right: 8px;
+        font-size: 16px;
+    }
+    
+    @media screen and (max-width: 500px) {
+
+       .navbar.hidden {
+        top: -350px;
+      }
+    
+      .counter-text {
+        font-size: 8px;
+      }
+      
+      #counter {
+        font-size: 12px;
+      }
+      
+      .counter-box {
+        width: 100%;
+        margin-right: 8%;
+        position: relative;
+        margin-left: -6%;
+      }
+      
+      button {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        background-color: #006699;
+        color: white;
+        padding: 6px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+    
+      button:hover {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        background-color: #024669;
+        color: white;
+        padding: 7px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+
+    .navbar {
+      font-family: 'Montserrat';
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(to left, rgba(0, 102, 153, 0.4), rgba(0, 102, 153, 1));
+      color: #fff;
+      padding: 14px;
+      position: sticky;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 421;
+      transition: top 0.525s ease-in-out;
+    }
+    
+    
+ }
+    
+    .link {
+      text-decoration: underline 2px #ffc72c;
+      font-style: italic;
+      color: #051D28;
+    }
+    
+    .imglink {
+      text-decoration: underline 2px #ffc72c;
+      font-style: italic;
+      color: white;
+    }
+
+   
+    p span {
+      position: relative;
+    }
+
+    p span::after {
+      padding-bottom: 8px;
+      content: ' ';
+      z-index: -1;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 15px;
+      background-color: #ffc72c;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.105s ease-in;
+    }
+    
+    li span::after {
+      padding-bottom: 8px;
+      content: ' ';
+      z-index: -1;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 17px;
+      background-color: rgba(255, 255, 255, 0.88);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.155s ease-in;
+    }
+
+    p span:hover::after {
+      transform: scaleX(1);
+    }
+
+    li span {
+      position: relative;
+    }
+
+    li span:hover::after {
+      transform: scaleX(1);
+    }
+
+  /* ^ this stuff is the underline effect :) */
+   
+    /* navbar hover effects go brrr */
+    
+    
+  /* VVV BASIC AHH NOW VVV */
+  
+      /* main styling for text on home page */
+
+    .home-p {
+      text-align: left;
+      font-size: 18px;
+    }
+    
+    .credit {
+      word-wrap: break-word;
+      top: 85%;
+      width: 50%;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 3px;
+      font-size: 10px;
+      color: white;
+      z-index: 14;
+    }
+    
+    .home-h1 {
+      font-size: 32px;
+    }
+    
+    #EAWC {
+      font-size: 25px;
+    }
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    .goal-li {
+      top: -20%;
+      font-size: 16px;
+    }
+    
+    .goal-p {
+      font-size: 13px;
+    }
+    
+    .tip-subheader {
+      font-size: 21px;
+    }
+    
+    
+    
+        @media screen and (max-height: 400px) {
+      .section {
+        height: 85vh;
+      }
+      
+      .section-gradiant {
+        height: 85vh;
+      }
+      
+      .home-h1 {
+        font-size: 26px;           /* shorter screens */
+      }
+      
+      h1 {
+        font-size: 26px;
+      }
+      
+      .home-p {
+        font-size: 18px;
+      }
+
+      .goal-li {
+        font-size: 20px;
+      }
+    
+      .goal-p {
+        font-size: 15px;
+      }
+
+    .tip-subheader {
+      font-size: 16px;
+    }
+      
+    }
+    
+        @media screen and (max-width: 450px) {
+      
+      .home-h1 {
+        font-size: 26px;          /* less wide screens */
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .home-p {
+        font-size: 15px;
+      }
+
+      .goal-li {
+        font-size: 13px;
+      }
+    
+      .goal-p {
+        font-size: 11px;
+      }
+
+    .tip-subheader {
+      font-size: 15px;
+    }
+      
+    }
+    
+        @media screen and (min-width: 1024px) {
+      
+      .home-h1 {
+        font-size: 30px;
+      }
+      
+      h1 {
+        font-size: 30px;          /* larger screens (width) */
+      }
+      
+      .home-p {
+        font-size: 20px;
+      }
+      
+      .goal-li {
+        font-size: 23px;
+      }
+    
+      .goal-p {
+        font-size: 15px;
+      }
+      
+      .tip-subheader {
+        font-size: 25px;
+      }
+      
+      #tip {
+        font-size: 20px;
+      }
+      
+    }
+    
+    
+    @media screen and (min-width: 1024px) and (min-height: 650px) {
+  
+      .home-h1 {
+        font-size: 32px;
+      }
+      
+      h1 {
+        font-size: 32px;          /* larger screens (length and width*/
+      }
+      
+      .home-p {
+        font-size: 22px;
+      }
+      
+      .goal-li {
+        font-size: 26px;
+      }
+    
+      .goal-p {
+        font-size: 18px;
+      }
+      
+      .tip-subheader {
+        font-size: 29px;
+      }
+      
+      #tip {
+        font-size: 24px;
+      }
+    
+      
+      
+}
+
+    @media screen and (max-width: 345px) and (max-height: 700px) {
+  
+      .home-h1 {
+        font-size: 19px;
+      }
+      
+      h1 {
+        font-size: 19px;    /* really small screens */
+      }
+      
+      .home-p {
+        font-size: 13px;
+      }
+}  
+    
+    button {
+      font-weight: bold;
+      font-family: 'Montserrat';
+      background-color: #006699;
+      color: white;
+      padding: 9px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    
+    button:hover {
+      font-weight: bold;
+      font-family: 'Montserrat';
+      background-color: #024669;
+      color: white;
+      padding: 9px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+    
+    @media screen and (max-width: 500px) {
+      
+      button {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        background-color: #006699;
+        color: white;
+        border: none;
+        padding: 7px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+    
+      button:hover {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        background-color: #024669;
+        color: white;
+        border: none;
+        padding: 7px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.25s;
+        
+        }
+        
+        #tip {
+        font-size: 11px;
+        text-align: center;
+        }
+    }
+    
+    
+    /* end of button shutff */
+    
+        /* link stuff */
+    
+        a:link {
+      font-style: italic;
+      transition: 0.1s;
+      text-decoration: underline 3px #ffc72c;
+      text-decoration-skip-ink: none;
+    }
+
+    a:visited {
+      font-style: italic;
+      transition: 0.1s;
+      text-decoration: underline 3px #ffc72c;
+      text-decoration-skip-ink: none;
+    }
+
+    a:hover,
+    a:focus {
+      transition: 0.23s ease-in-out;
+      background-color: #ffc72c;
+      border-left-width: 0;
+      border-radius: 0;
+      border-right-width: 0;
+      border-top-width: 0;
+      display: inline;
+      text-decoration-skip-ink: none;
+    }
+    
+    .a:link {
+      font-style: normal;
+    }
+
+    .a:visited {
+      font-style: normal;
+
+    }
+
+    .a:hover,
+    .a:focus {
+      font-style: normal;
+      background-color: transparent;
+      border-left-width: 0;
+      border-radius: 0;
+      border-right-width: 0;
+      border-top-width: 0;
+      display: inline;
+      text-decoration-skip-ink: none;
+    }
+    
+    /* end o' the link stuff hehe */
+    
+        /* Trivia game CSS STARTS HERE -> */
+    
+    
+    #question {
+      margin-bottom: 20px;
+      font-size: 35px;
+      text-align: center;
+  }
+
+    .question2 {
+      text-decoration: underline lightblue 4px;
+    }
+
+    .score2 {
+      font-size: 35px;
+      text-decoration: underline lightblue 3px;
+      text-align: center;
+    }
+
+    .explanation2 {
+      margin-top: 13px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .funny2 {
+      margin-top: 8px;
+      margin-bottom: 5px;
+      font-size: 25px;
+      text-align: center;
+    }
+    
+    
+    #options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      margin-bottom: 2%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+
+  .next2 {
+      color: white;
+      width: 100%;
+      align-self: center;
+    }
+
+    .play2 {
+      font-size: 25px;
+    }
+
+    .content2 {
+      width: 100vw;
+      align-items: center;
+      border-top: #006699 solid 4px;
+      padding: 20px;
+    }
+    
+    
+    .headline2 {
+      font-size: 65px;
+    }
+
+    .headline-box2 {
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .headline-box2 h2 {
+      text-align: center;
+    }
+
+
+    .subheader2 {
+      text-align: center;
+      text-decoration: underline lightblue 3px;
+      font-size: 23px;
+    }
+    
+      
+  @media screen and (max-width: 500px) {
+    
+    #question {
+      margin-bottom: 20px;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .headline2 {
+      font-size: 35px;
+    }
+    
+    .explanation2 {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+    
+    .score2 {
+      font-size: 19px;
+      text-decoration: underline lightblue 3px;
+      text-align: center;
+    }
+
+    .funny2 {
+      font-size: 16px;
+      text-align: center;
+    }
+    
+  }
+  
+    /* Trivia CSS ENDS HERE -> */
+</style>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+
+<!-- THIS IS THE NAVBAR SECTION; GET USED TO IT -->
+
+  <div class="navbar">
+    <ul>
+    
+    <li class="site"><a class="a" href="#Section0" >Water Saving Warriors</a></li>
+    
+      <li><span><a class="a" href="#Section1" target="_self">Water Crisis</a></span></li>
+      <li><span><a class="a" href="#Section2" target="_self">Long Term Issues</a></span></li>
+      <li><span><a class="a" id="open" href="#Section3" target="_self">Personal Goals</a></span></li>
+          <div class="counter-box">
+          <span><a class="a"><div id="counter">69</div></a></span>
+          
+          <div class="counter-text">gallons of water used by RI residents since you opened the site</div>
+    </div>
+    
+
+    <script>var counterElement = document.getElementById("counter");
+var count = 0;
+var minIncrement = 88;
+var maxIncrement = 93;
+//uwu
+function updateCounter() {
+    counterElement.innerHTML = count.toLocaleString();
+}
+function incrementCount() {
+    count += Math.floor(Math.random() * (maxIncrement - minIncrement + 1)) + minIncrement;
+    updateCounter();
+}
+
+window.onload = function() {
+    count = 0;
+    updateCounter();
+};
+
+setInterval(incrementCount, 100);
+</script>
+      
+    </ul>
+  </div>
+  
+  <script>
+let prevScrollPos = window.pageYOffset;
+
+
+const navbar = document.querySelector('.navbar');
+
+
+function toggleNavbar() {
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos > currentScrollPos) {
+    // scroll up = show navbarrrr 
+    navbar.classList.remove('hidden');
+  } else {
+    // if down then it goes bye bye
+    navbar.classList.add('hidden');
+  }
+
+ 				 // update the position of the bar
+  prevScrollPos = currentScrollPos;
+}
+
+	// yipee (listener)
+window.addEventListener('scroll', toggleNavbar);
+  </script>
+  
+  
+<!-- END OF NAVBAR SECTION GET USED TO IT -->
+
+
+  <div class="banner">
+    <img src="https://www.publicdomainpictures.net/pictures/60000/velka/red-african-sunset.jpg" alt="Banner image of a beautiful sunset with many large trees in the foreground">
+  </div>
+
+<!--Sec S.-->  <div class="container">
+  
+    <div class="section-gradiant">
+      <div class="top-left-gradiant">
+      <h1 class="home-h1">
+      Why Personal Goals Are Important
+      </h1>
+      <p class="home-p">
+      Water scarcity and sanitation challenges are global issues. While you may not feel the immediate impact, it's necessary to recognize their worldwide consequences. By raising awareness and conserving water, we can address these crises on a global scale. Let's make a difference and prevent worsening water shortages worldwide.
+      </p>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <div class="top-left">
+      <h1 class="home-h1">
+      What Can You Do As An Individual?
+      </h1>
+      <p class="home-p">
+      Your actions matter. By conserving water, adopting sustainable habits, and raising awareness, you can make the change. Here you can read about ways to save water and help the world achieve the United Nations Sustainable Development Goal #6, "ensure availability of and sustainable management of water and sanitation for all."
+      </p>
+      </div>
+    </div>
+    <div class="section-break">
+    <h1 class="home-h1">
+      Water Saving Strategies
+     </h1>
+    </div>
+    <div class="section">
+      <div class="text-bottom-left">
+      <h1 id="EAWC" class="home-h1">
+      Switching to water-efficient appliances 
+      </h1>
+      <p class="home-p">
+      One way to reduce water usage is by using more up-to-date and water-efficient appliances. Doing so will decrease the water you waste in your day-to-day life. Some of the water-efficient appliances you can use include:
+      </p>
+      
+      </div>
+    </div>
+    
+    <div class="section-gradiant">
+      <div class="top-left-gradiant">
+          <ul>
+    
+      <li class="goal-li"> Water-efficient shower heads </li>
+      <p class="goal-p"> Can decrease the average usage of water every minute from 2.5 liters to around 1.5 liters or, in other words, you'd save <span><a href="https://www.watercorporation.com.au/Help-and-advice/Waterwise/Bathroom/Saving-water-during-shower-time#:~:text=To%20save%20water%20in%20the,help%20to%20stay%20on%20track%3F">up to 20,000 liters of water per year.</a></span></p>
+      <li class="goal-li"> Water aerators in faucets </li>
+      <p class="goal-p">
+      Low water aerators reduce the flow of a sink to save water that would usually get wasted. The average bathroom sink expells 9 liters of water per minute saving 450% of the water used when a low water aerator is installed.
+      </p>
+      
+      <li class="goal-li"> Low-flow toilets </li>
+      <p class="goal-p">
+      Using low-flow toilets can drastically decrease the water wasted when you flush the toilet. According to the <span><a href="https://www.epa.gov/watersense/residential-toilets">Environmental Protection Agency (EPA)</a></span>, older toilets use up to 6 gallons of water per flush! However, more recently made low-flow toilets use around 1.5 gallons per flush, proving to be a great water-saver with up to 13,000 gallons of water a year being saved.
+      </p>
+      
+        </ul>
+      </div>
+    </div>
+    
+<!--Sec E.-->  </div>
+
+<!--Sec S.-->  <div class="container">
+  
+    <div class="section">
+      <img class="image-top-left" src="https://media.lex.dk/media/17484/standard_Energy_Star.jpg" alt="Coal fired plant which is located on the Ohio River, west of Cincinnati">
+    </div>
+    <div class="section">
+      <div class="text-top-right">
+      <h1 class="home-h1">
+      What To Look For?
+      </h1>
+      <p class="home-p">
+    A generally good rule is to look for appliances with the <span><a href="https://www.energystar.gov">Energy Star®</a></span> label, as they are more energy efficient and eco-friendly than standard models. The criteria to meet to receive the Energy Star label are quite lofty. For example, for washing machines to meet the requirement for an Energy Star it must use <span><a href="https://www.energystar.gov/productfinder/product/certified-clothes-washers/results">33% less water and 25% less energy</a></span> than standard models. Looking for the Energy Star is important to remember to be more water and energy efficient. 
+      </p>
+
+      </div>
+    </div>
+    
+    
+    <div class="section">
+      <div class="text-bottom-left">
+      <h1 class="home-h1">
+      Conscious Water Consumption
+      </h1>
+      <p class="home-p">
+    Being conscious of your water consumption is a crucial step to saving water. Bad habits in daily activities like keeping on the tap while brushing your teeth or loading the dishwasher before it's filled waste water. And the amount of water this waste adds up every single day. Here are some ways to reduce your water usage in your daily life:
+      </p>
+      
+      
+
+      </div>
+    </div>
+    
+    
+        <div class="section-gradiant">
+      <div class="top-left-gradiant">
+          <ul>
+    
+      <li class="goal-li"> Turning off the tap when brushing </li>
+      <p class="goal-p"> Believe it or not, keeping the tap on while brushing your teeth consumes lots of water. For every minute you keep the tap on while brushing up to 9 liters of water are used up. That's nearly 5,300 liters (or 1,400 gallons) of water a year wasted while brushing your teeth!</p>
+      <li class="goal-li"> Taking shorter showers </li>
+      <p class="goal-p">
+      On average, showers make up roughly <span><a href="https://www.watercorporation.com.au/Help-and-advice/Waterwise/Home/Easy-household-habits-for-little-water-savers">22% of a household's water use</a></span>, so reducing your shower time is a great way to reduce water usage. <br> <br> Aiming for 4-minute showers is spectacular, but even going to under 10 minutes is practical. Some other ways to conserve water include switching the showerhead off when using soap or shampoo or collecting water that would've gone down the drain to water plants.
+      </p>
+      
+        </ul>
+      </div>
+    </div>
+    
+    
+          <div class="section-break-tip">
+    <h1 class="home-h1">
+      Water-Saving Tips Generator
+     </h1>
+      
+        <h2 class="tip-subheader">Looking for some quick tips on saving water? Look no further!</h2>
+        
+        <script>const tips = [
+  "Fix any leaks promptly in faucets, toilets, and pipes.",
+  "Take shorter showers to reduce water usage.",
+  "Install water-efficient fixtures, such as low-flow showerheads and faucets.",
+  "Collect rainwater in barrels or containers for watering plants.",
+  "Water your garden during the cooler parts of the day to minimize evaporation.",
+  "Use a broom instead of a hose to clean outdoor areas like driveways and sidewalks.",
+  "Only run the dishwasher and washing machine with full loads.",
+  "Install a dual-flush toilet or place a water displacement device in the toilet tank.",
+  "Mulch your garden to retain soil moisture and reduce watering needs.",
+  "Use a bucket or watering can instead of a hose for watering plants.",
+  "Fix or adjust sprinklers to avoid water waste due to overspray or leaks.",
+  "Collect and reuse graywater from activities like dishwashing or laundry for irrigation.",
+  "Install a rain sensor or smart irrigation system to avoid watering during rainy periods.",
+  "Choose water-efficient appliances and look for the Energy Star label.",
+  "Use a pool cover to reduce water evaporation from swimming pools.",
+  "Opt for native or drought-tolerant plants in your garden that require less watering.",
+  "Sweep outdoor surfaces instead of hosing them down.",
+  "Use a shut-off nozzle on your hose to control water flow.",
+  "Collect and reuse water from rinsing fruits and vegetables for watering plants.",
+  "Fix dripping faucets by replacing washers or seals.",
+  "Use a basin or plug the sink when washing dishes by hand to minimize water usage.",
+  "Install a water-efficient showerhead to reduce water consumption during showers.",
+  "Retrofit older toilets with a dual-flush converter or replace them with water-efficient models.",
+  "Water outdoor plants deeply but less frequently to encourage deep root growth.",
+  "Use a layer of organic mulch around plants to help retain soil moisture.",
+  "Install a rainwater harvesting system to capture and store rainwater for various uses.",
+  "Adjust sprinklers to ensure they are watering plants and not paved areas.",
+  "Use a drip irrigation system to deliver water directly to plant roots and minimize evaporation.",
+  "Reuse fish tank or aquarium water for watering indoor plants.",
+  "Avoid leaving taps running while brushing teeth or washing hands.",
+  "Use a pool cover to prevent water evaporation and reduce the need for refilling.",
+  "Avoid overwatering lawns by adjusting sprinkler settings and watering only when necessary.",
+  "Capture and redirect air conditioning condensation to water outdoor plants.",
+  "Use a broom or leaf blower to clean outdoor spaces instead of hosing them down.",
+  "Educate family members about water conservation and encourage their participation.",
+  "Check for and repair any leaks in outdoor faucets and irrigation systems.",
+  "Avoid using the toilet as a wastebasket to reduce unnecessary flushing.", 
+  "Reduce shower pressure to a comfortable level instead of using full force, as lower pressure consumes less water.",
+  "Use a shower timer or set an alarm to help you keep track of your shower duration.",
+  "Consider taking showers instead of baths, as showers generally use less water.",
+  "Take shorter showers, aiming for 10 minutes or less, to reduce water usage.",
+  "Soak pots and pans instead of letting the water run while you scrape them clean.",
+  "Designate one glass for your drinking water each day, or refill a water bottle.",
+  "Use the garbage disposal sparingly.", "Refrain from using water to thaw food.",
+  "Keep a pitcher of water to refill water instead of using the tap",
+  "Reuse leftover water that was used for cooked or steamed foods to make a nutritious soup."
+];
+
+function generateTip() {
+  const tipElement = document.getElementById("tip");
+  const randomIndex = Math.floor(Math.random() * tips.length);
+  tipElement.textContent = tips[randomIndex];
+}
+</script>
+      
+  <div>
+    <p class="home-p" id="tip"></p>
+    <button class="centered-btn" id="generateBtn" onclick="generateTip()">Generate Tip</button>
+  </div>
+  
+    </div>
+    
+    
+        <div class="section">
+    <p class="credit">
+Photo: waterdotorg, <a class="imglink" href="https://upload.wikimedia.org/wikiversity/en/8/85/Rainwater_collection_tank%2C_Uganda.jpg">(CC BY-SA 2.0)</a>
+</p>
+      <img class="image-top-left" src="https://upload.wikimedia.org/wikiversity/en/8/85/Rainwater_collection_tank%2C_Uganda.jpg" alt="Rainwater harvesting in Uganda, Africa">
+    </div>
+    <div class="section">
+      <div class="text-top-right">
+      <h1 class="home-h1">
+      Harvesting Rainwater 
+      </h1>
+      <p class="home-p">
+    Although there are many ways to conserve water, there are also ways to harvest your water by using rain barrels. Using rain barrels can, on average, save a homeowner around 1,300 gallons of water; this can reduce your dependency on public water and also allows for a quick solution for water to water plants or your garden.
+      </p>
+
+      </div>
+    </div>
+    
+        <div class="section">
+      <div class="text-bottom-left">
+      <h1 class="home-h1">
+      Savvy Sprinkler Solutions
+      </h1>
+      <p class="home-p">
+      Outdoor water usage accounts for 30% of the average household's water usage nationwide. Or roughly over 8 billion gallons a day from residential outdoor water use. Sprinkler systems require a lot of water, so here are some ways to decrease your sprinkler's water usage:
+      </p>
+      
+      </div>
+    </div>
+    <div class="section">
+    <img class="image-bottom-right" src="https://images.rawpixel.com/image_600/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmw1MDE5NDU4NDI2Mi1wdWJsaWMtaW1hZ2Uta29ucWxsd2QuanBn.jpg" alt="Picture of a sprinkler system spraying water over grass. ">
+    </div>
+    
+    <div class="section-gradiant">
+      <div class="top-left-gradiant">
+          <ul>
+    
+      <li class="goal-li"> Install water-efficient sprinklers. </li>
+      <p class="goal-p"> WaterSense-labeled sprinklers can save the average household around 5,600 gallons of water per year. On a larger scale, if every home using sprinklers in the U.S. switched to WaterSense sprinklers, it would save over 31 billion gallons of water yearly.</p>
+      <li class="goal-li"> Inspect Sprinklers </li>
+      <p class="goal-p">
+      Checking your sprinkler systems on a regular basis is a good idea, as a broken sprinkler head can waste around 25,000 gallons of water in just six months, according to the <span><a href="https://www.epa.gov/watersense/sprinkler-spruce-up">EPA</a></span>
+      </p>
+      
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <div class="text-bottom-left">
+      <h1 class="home-h1">
+      Educate Others
+      </h1>
+      <p class="home-p">
+      
+      Educating others about the importance of saving water is crucial in creating an impact. By sharing knowledge and awareness, you can empower individuals and communities to adopt water-saving habits that can significantly reduce water consumption. Encouraging responsible water usage and promoting efficient practices conserves a vital resource and contributes to poverty reduction, improved well-being, and a healthier planet. By inspiring others to take action, we create a ripple effect of positive change, leading to a more sustainable future for all.
+
+
+      </p>
+      </div>
+    </div>
+    
+    
+        <div class="content2">
+  
+    
+     <div class="headline-box2">
+
+    <h2 class="headline2">Trivia</h2>
+    
+    <h2 class="subheader2">Are you a true water-saving warrior? Let's found out!</h2>
+    
+    </div>
+
+    <div class="question2" id="question"></div>
+    
+    <div id="options"></div>
+    
+    <div class="score2" id="score"></div>
+    
+    <div class="funny2" id="result-text" style="display: none;"></div>
+        
+    <button class="next2" id="play-again-btn" style="display: none;">Play Again?</button>
+    
+    <button class="next2" id="next-btn">Next Question</button>
+    
+    <div class="explanation2" id="explanation"></div>
+
+  </div> <br> <br> 
+  
+
+<script>
+
+const questions = [
+    {
+        question: "What requirements do washing machines need to meet to be labeled with an ''energy star''?",
+        options: ["Wash with very clean and sanitary water", "33% less water usage and 25% less energy used than standard models", "25% less water usage and 45% less energy used than standard models", "It has to be a very cheap model"],
+        answer: 1,
+        explanation: "Correct answer: 33% less water usage and 25% less energy used. According to the Department of Energy, if a washing machine does not qualify for a ''energy star'' up to 17 gallons of extra water can be wasted in a single load."
+    },
+    {
+        question: "How much water do rain barrels save home owners on average per year?",
+        options: ["900 gallons", "450 gallons", "4,300 liters", "1,300 gallons"],
+        answer: 3,
+        explanation: "Correct answer: 1,300. Rain barrels collect rain water that would otherwise erode your yard and saves it for later usage. This reduces your dependence on public water that could run out during droughts. The Environmental Protection Agency estimates the number of gallons saved to be roughly 1,300."
+    },
+    {
+        question: "How much water is used per minute while taking a shower?",
+        options: ["2.5 gallons", "1.5 gallons", "9.36353 liters", "5 gallons"],
+        answer: 0,
+        explanation: "Correct answer: 2.5 gallons. For reference, a 10 minute shower uses up to 25 gallons. But, if you bring it down to 4 minutes, a shower could take as little as 10 gallons. Water efficient showerheads on the other hand only use 1.5 gallons per minute."
+    },
+    {
+        question: "Turning off the tap while brushing your teeth can save up to how many liters per minute?",
+        options: ["15 liters", "6 liters", "4 gallons", "9 liters"],
+        answer: 3,
+        explanation: "Correct answer: 9 liters. Avoid keeping the tap running while brushing your teeth as it can waste a large amount of water every day. Simple changes like these in your daily life can greatly improve your water efficiency."
+    },
+    
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const explanationElement = document.getElementById("explanation");
+const nextButton = document.getElementById("next-btn");
+const scoreElement = document.getElementById("score");
+const resultTextElement = document.getElementById("result-text");
+const playAgainButton = document.getElementById("play-again-btn");
+
+function displayQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    optionsElement.innerHTML = "";
+    for (let i = 0; i < currentQuestion.options.length; i++) {
+        const option = document.createElement("button");
+        option.textContent = currentQuestion.options[i];
+        option.addEventListener("click", selectOption);
+        optionsElement.appendChild(option);
+    }
+}
+
+function selectOption(event) {
+    const selectedOption = event.target;
+    const selectedOptionIndex = Array.from(optionsElement.children).indexOf(selectedOption);
+
+    if (selectedOptionIndex === questions[currentQuestionIndex].answer) {
+        selectedOption.classList.add("correct");
+        questionElement.textContent = "Correct!";
+        score++;
+    } else {
+        selectedOption.classList.add("wrong");
+        questionElement.textContent = "Wrong!";
+        Array.from(optionsElement.children)[questions[currentQuestionIndex].answer].classList.add("correct");
+    }
+
+    Array.from(optionsElement.children).forEach(option => {
+        option.disabled = true;
+    });
+
+    explanationElement.textContent = questions[currentQuestionIndex].explanation;
+    nextButton.disabled = false;
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+        resetOptions();
+        nextButton.disabled = true; // disable the button initially
+    } else {
+       
+        questionElement.textContent = "Game Over!";
+        optionsElement.innerHTML = "";
+        nextButton.style.display = "none";
+        scoreElement.textContent = `Your score: ${score}/${questions.length}`;
+
+        // show the message  based on the score
+        if (score == 1) {
+            resultTextElement.textContent = "You're getting there! Keep trying. ";
+        } else if (score == 0) {
+            resultTextElement.textContent = "You got no questions correct. Keep practicing!";
+        } else if (score == 2) {
+            resultTextElement.textContent = "Good job! With a bit more practice you might get them all right!";
+        } else if (score == 3) {
+            resultTextElement.textContent = "You're almost there!";
+        } else if (score == 4) {
+            resultTextElement.textContent = "You got all of the questions correct. You are a true water warrior!";
+        }
+
+        resultTextElement.style.display = "block";
+        playAgainButton.style.display = "block";
+    }
+}
+
+function resetOptions() {
+    Array.from(optionsElement.children).forEach(option => {
+        option.disabled = false;
+        option.classList.remove("correct", "wrong");
+    });
+
+    questionElement.textContent = questions[currentQuestionIndex].question;
+    explanationElement.textContent = "";
+}
+
+function playAgain() {
+    currentQuestionIndex = 0;
+    score = 0;
+    displayQuestion();
+    resetOptions();
+    scoreElement.textContent = "";
+    resultTextElement.style.display = "none";
+    playAgainButton.style.display = "none";
+    nextButton.style.display = "block";
+}
+
+nextButton.addEventListener("click", nextQuestion);
+playAgainButton.addEventListener("click", playAgain);
+
+// random owo
+questions.sort(() => Math.random() - 0.5);
+
+// 
+nextButton.disabled = true;
+
+// display frist qoestion
+displayQuestion();
+
+</script>
+
+   
+ 
+</div>
+
+<script>
+
+var lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  var textElements = document.querySelectorAll(".text-top-right, .text-bottom-left");
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    textElements.forEach(function(element) {
+      if (isElementInViewport(element) && !element.classList.contains("slide-in")) {
+        element.classList.add("slide-in");
+      }
+    });
+    
+  }
+
+  lastScrollTop = scrollTop;
+  
+});
+
+function isElementInViewport(element) {
+
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  
+}
+</script>
+
+</body>
+</html>
