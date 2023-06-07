@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="styles/index.css">
+    
+  </head>
+
+  <body>
+
+    <!-- THIS IS THE NAVBAR SECTION; GET USED TO IT -->
+
+    <div class="navbar">
+      <ul>
+
+        <li class="site"><a class="a" href="#Section0" target="_self">Water Saving Warriors</a></li>
+
+
+        <li><span><a class="a" href="#Section1" target="_self">Water Crisis</a></span></li>
+        <li><span><a class="a" href="#Section2" target="_self">Long Term Issues</a></span></li>
+        <li><span><a class="a" href="#Section3" target="_self">Personal Goals</a></span></li>
+        <div class="counter-box">
+          <span><a class="a">
+              <div id="counter">69</div>
+            </a></span>
+
+          <div class="counter-text">gallons of water used by RI residents since you opened the site</div>
+        </div>
+
+
+        <script>
+          var counterElement = document.getElementById("counter");
+          var count = 0;
+          var minIncrement = 88;
+          var maxIncrement = 93;
+          //uwu
+          function updateCounter() {
+            counterElement.innerHTML = count.toLocaleString();
+          }
+
+          function incrementCount() {
+            count += Math.floor(Math.random() * (maxIncrement - minIncrement + 1)) + minIncrement;
+            updateCounter();
+          }
+
+          window.onload = function() {
+            count = 0;
+            updateCounter();
+          };
+
+          setInterval(incrementCount, 100);
+
+        </script>
+
+      </ul>
+    </div>
+
+    <script>
+      let prevScrollPos = window.pageYOffset;
+
+
+      const navbar = document.querySelector('.navbar');
+
+
+      function toggleNavbar() {
+        const currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+          // scroll up = show navbarrrr 
+          navbar.classList.remove('hidden');
+        } else {
+          // if down then it goes bye bye
+          navbar.classList.add('hidden');
+        }
+
+        // update the position of the bar
+        prevScrollPos = currentScrollPos;
+      }
+
+      // yipee (listener)
+      window.addEventListener('scroll', toggleNavbar);
+
+    </script>
+
+
+    <!-- END OF NAVBAR SECTION GET USED TO IT -->
+
+
+    <div class="banner">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chyulu_Hills%2C_Kenya_%28Unsplash%29.jpg" alt="banner image of a beautiful sunset on the Chyulu Hills in Kenya ">
+    </div>
+
+    <!--Sec S.-->
+    <div class="container">
+
+      <div class="section-gradiant">
+        <div class="top-left-gradiant">
+          <h1 class="home-h1">
+            Who are we?
+          </h1>
+          <p class="home-p">
+            We are a passionate group of 7th graders from Rhode Island dedicated to raising awareness about the water crisis in East Africa. Our mission is to educate people about the challenges millions face in accessing clean water and proper sanitation.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="section">
+        <div class="top-left">
+          <h1 class="home-h1">
+            What do we do?
+          </h1>
+          <p class="home-p">
+            Through our website we inform and empower individuals to make a difference. We provide valuable information and tips to inspire action toward improving water and sanitation conditions. Join us in achieving United Nations Goal #6 for clean water and sanitation for all.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="text-bottom-left">
+          <h1 id="EAWC" class="home-h1">
+            Uncovering East Africa's Water Crisis
+          </h1>
+          <p class="home-p">
+            Explore East Africa's water crisis, where millions lack access to clean drinking water and proper sanitation. Learn about the impact on communities and the urgent need for sustainable solutions.
+          </p>
+          <button class="button" id="EastAfricaWaterCrisis">Learn More </button>
+        </div>
+      </div>
+      <div class="section">
+        <p class="credit">
+          Photo: Oxfam East Africa, <a class="imglink" href="https://www.flickr.com/photos/46434833@N05/5757827897">(CC BY 2.0)</a>
+        </p>
+        <img class="image-bottom-right" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Oxfam_East_Africa_-_SomalilandDrought003.jpg" alt="Faadomo Hirsi and her grandson wheel their daily allowance of two 20-litre jerrycans back to their house. Faadomo’s husband died a few years ago and she now looks after seven people – her children, grandchildren and her elderly mother.">
+      </div>
+
+      <!--Sec E.-->
+    </div>
+
+    <!--Sec S.-->
+    <div class="container">
+
+      <div class="section">
+        <p class="credit">
+          Photo: Robert S. Donovan, <a class="imglink" href="https://fnhscroll.org/2878/opinion/how-global-warming-is-affecting-us-and-how-we-can-help/#modal-photo">(CC BY 3.0)</a>
+        </p>
+        <img class="image-top-left" src="https://fnhscroll.org/wp-content/uploads/2022/11/xnYawPMJVl1cC0WNwMAGKlpMkSC4DYRWZhtIan1x.jpg" alt="Coal fired plant which is located on the Ohio River, west of Cincinnati">
+      </div>
+      <div class="section">
+        <div class="text-top-right">
+          <h1 class="home-h1">
+            Long Term Issues
+          </h1>
+          <p class="home-p">
+            Explore the long-term consequences of the water crisis on our future. Discover how limited access to clean water affects development, health, education, and the environment.
+          </p>
+          <button class="button" id="LongTermIssues">Learn More </button>
+        </div>
+      </div>
+
+
+      <div class="section">
+        <div class="text-bottom-left">
+          <h1 class="home-h1">
+            Personal Goals
+          </h1>
+          <p class="home-p">
+            Embark on your journey of protecting water resources. Here, you'll find practical tips and innovative strategies to integrate water-saving practices into your daily life. Set goals and make a difference, one drop at a time.
+          </p>
+          <button class="button" id="PersonalGoals">Learn More </button>
+        </div>
+      </div>
+      <div class="section">
+        <img class="image-bottom-right" src="https://cdn.creazilla.com/illustrations/7824162/reach-goals-illustration-md.png" alt="Image of a road which is showcasing your goals">
+      </div>
+
+      <!--Sec E.-->
+    </div>
+
+    <script>
+      var lastScrollTop = 0;
+
+      window.addEventListener("scroll", function() {
+        var textElements = document.querySelectorAll(".text-top-right, .text-bottom-left");
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          textElements.forEach(function(element) {
+            if (isElementInViewport(element) && !element.classList.contains("slide-in")) {
+              element.classList.add("slide-in");
+            }
+          });
+
+        }
+
+        lastScrollTop = scrollTop;
+
+      });
+
+      function isElementInViewport(element) {
+
+        var rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
