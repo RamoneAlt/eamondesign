@@ -197,6 +197,7 @@
     }
     
     .navbar li {
+      font-weight: 100;
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -206,6 +207,7 @@
     }
     
     .navbar li a {
+      font-weight: 100;
       color: #fff;
       text-decoration: none;
       padding: 5px 10px;
@@ -213,6 +215,7 @@
     }
     
     .navbar li a:hover {
+      font-weight: 100;
       transition: 0.55s;
       color: #050f30;
     }
@@ -281,6 +284,7 @@
  }
     
     .link {
+        
       text-decoration: underline 2px #ffc72c;
       font-style: italic;
       color: #051D28;
