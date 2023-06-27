@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Affald;
+    src: url("../Fonts/Affald.ttf") format('truetype');
+    font-style: normal;
+}
+
+body {
+  font-family: Affald;
+  background-color: #ffb0ef;
+  font-size: 32px;
+}
