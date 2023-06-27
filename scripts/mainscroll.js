@@ -28,27 +28,3 @@ var lastScrollTop = 0;
         );
 
       }
-
-
-      let prevScrollPos = window.pageYOffset;
-
-      const navbar = document.querySelector('.navbar');
-
-
-      function toggleNavbar() {
-        const currentScrollPos = window.pageYOffset;
-
-        if (prevScrollPos > currentScrollPos) {
-          // scroll up = show navbarrrr 
-          navbar.classList.remove('hidden');
-        } else {
-          // if down then it goes bye bye
-          navbar.classList.add('hidden');
-        }
-
-        // update the position of the bar
-        prevScrollPos = currentScrollPos;
-      }
-
-      // yipee (listener)
-      window.addEventListener('scroll', toggleNavbar);
