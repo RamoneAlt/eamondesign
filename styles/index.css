@@ -1,12 +1,11 @@
 @font-face {
     font-family: 'Affald';
     src: url("../eamondesign/fonts/Affald.ttf") format('truetype');
+    font-weight: 100;
+    font-style: italic;
 }
 
 body {
     font-family: 'Affald', sans-serif;
     background-color: #ffb0ef;
-    font-weight: 900;
-    font-style: italic;
-    font-style: bold;
 }
