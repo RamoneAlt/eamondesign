@@ -1,15 +1,255 @@
 
-<head>
-<link rel="stylesheet" href="styles/index.css">
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/index.css">
+    
+  </head>
 
-<body>
-<h1> Hello how are you doing on this mighty fine day, huh? </h1><br><br>
-<h2> Hello how are you doing on this mighty fine day, huh? </h2><br><br>
-<h3> Hello how are you doing on this mighty fine day, huh? </h3><br><br>
-<h4> Hello how are you doing on this mighty fine day, huh? </h4><br><br>
-<h5> Hello how are you doing on this mighty fine day, huh? </h5><br><br><hr><br><br>
-  
-<p> Hello this is the main page for eamons website of wonderful things! :) </p>
+  <body>
 
-</body>
+    <!-- THIS IS THE NAVBAR SECTION; GET USED TO IT -->
+
+    <div class="navbar">
+      <ul>
+
+        <li class="site"><a class="a" href="#Section0" target="_self">Water Saving Warriors</a></li>
+
+        <li><span><a class="a" href="#Section1" target="_self">Water Crisis</a></span></li>
+        <li><span><a class="a" href="#Section2" target="_self">Long Term Issues</a></span></li>
+        <li><span><a class="a" href="#Section3" target="_self">Personal Goals</a></span></li>
+
+      </ul>
+    </div>
+
+    <script>
+      let prevScrollPos = window.pageYOffset;
+
+
+      const navbar = document.querySelector('.navbar');
+
+
+      function toggleNavbar() {
+        const currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+          // scroll up = show navbarrrr 
+          navbar.classList.remove('hidden');
+        } else {
+          // if down then it goes bye bye
+          navbar.classList.add('hidden');
+        }
+
+        // update the position of the bar
+        prevScrollPos = currentScrollPos;
+      }
+
+      // yipee (listener)
+      window.addEventListener('scroll', toggleNavbar);
+
+    </script>
+
+
+    <!-- END OF NAVBAR SECTION GET USED TO IT -->
+
+
+    <div class="banner">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chyulu_Hills%2C_Kenya_%28Unsplash%29.jpg" alt="banner image of a beautiful sunset on the Chyulu Hills in Kenya ">
+    </div>
+
+    <!--Sec S.-->
+    <div class="container">
+
+      <div class="section40">
+        <div class="top-left-gradiant">
+          <h1 class="home-h1">
+            Who are we?
+          </h1>
+          <p class="home-p">
+            We are a passionate group of 7th graders from Rhode Island dedicated to raising awareness about the water crisis in East Africa. Our mission is to educate people about the challenges millions face in accessing clean water and proper sanitation.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="section60">
+        <div class="top-left">
+          <h1 class="home-h1">
+            What do we do?
+          </h1>
+          <p class="home-p">
+            Through our website we inform and empower individuals to make a difference. We provide valuable information and tips to inspire action toward improving water and sanitation conditions. Join us in achieving United Nations Goal #6 for clean water and sanitation for all.
+          </p>
+        </div>
+      </div>
+      
+      <!-- end section 1 OWO -->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="section50">
+        <div class="text-bottom-left">
+          <h1 id="EAWC" class="home-h1">
+            Uncovering East Africa's Water Crisis
+          </h1>
+          <p class="home-p">
+            Explore East Africa's water crisis, where millions lack access to clean drinking water and proper sanitation. Learn about the impact on communities and the urgent need for sustainable solutions.
+          </p>
+          <button class="button" id="EastAfricaWaterCrisis">Learn More </button>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      <div class="section50">
+        <p class="credit">
+          Photo: Oxfam East Africa, <a class="imglink" href="https://www.flickr.com/photos/46434833@N05/5757827897">(CC BY 2.0)</a>
+        </p>
+        <img class="image-bottom-right" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Oxfam_East_Africa_-_SomalilandDrought003.jpg" alt="Faadomo Hirsi and her grandson wheel their daily allowance of two 20-litre jerrycans back to their house. Faadomo’s husband died a few years ago and she now looks after seven people – her children, grandchildren and her elderly mother.">
+      </div>
+      
+    </div>
+    <!--Sec E.-->
+    
+    <div class="container">
+    
+    
+      <div class="section25">
+        <div class="top-left">
+          <h1 class="home-h1">
+            What do we do?
+          </h1>
+          <p class="home-p">
+            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
+          </p>
+        </div>
+      </div>
+      
+      <div class="section50">
+        <div class="top-left">
+          <h1 class="home-h1">
+            What do we do?
+          </h1>
+          <p class="home-p">
+            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
+          </p>
+        </div>
+      </div>
+      
+      <div class="section25">
+        <div class="top-left">
+          <h1 class="home-h1">
+            What do we do?
+          </h1>
+          <p class="home-p">
+            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
+          </p>
+        </div>
+      </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Sec S.-->
+    
+    <div class="container">
+
+      <div class="section60">
+        <p class="credit">
+          Photo: Robert S. Donovan, <a class="imglink" href="https://fnhscroll.org/2878/opinion/how-global-warming-is-affecting-us-and-how-we-can-help/#modal-photo">(CC BY 3.0)</a>
+        </p>
+        <img class="image-top-left" src="https://fnhscroll.org/wp-content/uploads/2022/11/xnYawPMJVl1cC0WNwMAGKlpMkSC4DYRWZhtIan1x.jpg" alt="Coal fired plant which is located on the Ohio River, west of Cincinnati">
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      <div class="section50">
+        <div class="text-top-right">
+          <h1 class="home-h1">
+            Long Term Issues
+          </h1>
+          <p class="home-p">
+            Explore the long-term consequences of the water crisis on our future. Discover how limited access to clean water affects development, health, education, and the environment.
+          </p>
+          <button class="button" id="LongTermIssues">Learn More </button>
+        </div>
+      </div>
+
+
+
+
+      <div class="section50">
+        <div class="text-bottom-left">
+          <h1 class="home-h1">
+            Personal Goals
+          </h1>
+          <p class="home-p">
+            Embark on your journey of protecting water resources. Here, you'll find practical tips and innovative strategies to integrate water-saving practices into your daily life. Set goals and make a difference, one drop at a time.
+          </p>
+          <button class="button" id="PersonalGoals">Learn More </button>
+        </div>
+      </div>
+      
+
+      <!--Sec E.-->
+    </div>
+
+  </body>
+
+</html>
