@@ -352,7 +352,7 @@
 
     .home-p {
       text-align: left;
-      font-size: 18px;
+      font-size: 24px;
     }
     
     .credit {
@@ -369,28 +369,24 @@
     }
     
     .home-h1 {
-      font-size: 32px;
-    }
-    
-    #EAWC {
-      font-size: 25px;
+      font-size: 42px;
+      font-weight: 100;
     }
     
     h1 {
-      font-size: 32px;
+      font-size: 42px;
+      font-weight: 100;
     }
     
     .goal-li {
       top: -20%;
-      font-size: 16px;
+      font-size: 26px;
+      font-weight: 100;
     }
     
     .goal-p {
-      font-size: 13px;
-    }
-    
-    .tip-subheader {
-      font-size: 21px;
+      font-size: 24px;
+      font-weight: 100;
     }
     
     
@@ -423,10 +419,6 @@
       .goal-p {
         font-size: 15px;
       }
-
-    .tip-subheader {
-      font-size: 16px;
-    }
       
     }
     
@@ -451,10 +443,6 @@
       .goal-p {
         font-size: 11px;
       }
-
-    .tip-subheader {
-      font-size: 15px;
-    }
       
     }
     
@@ -478,10 +466,6 @@
     
       .goal-p {
         font-size: 15px;
-      }
-      
-      .tip-subheader {
-        font-size: 25px;
       }
       
       #tip {
@@ -511,10 +495,6 @@
     
       .goal-p {
         font-size: 18px;
-      }
-      
-      .tip-subheader {
-        font-size: 29px;
       }
       
       #tip {
