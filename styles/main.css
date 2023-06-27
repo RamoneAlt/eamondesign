@@ -2,6 +2,7 @@
     font-family: 'Affald';
     src: url("../fonts/Affald.ttf") format('truetype');
     font-weight: 100;
+    font-style: normal;
 }
 
     body {
@@ -10,6 +11,7 @@
       background: #121212;
       font-family: 'Affald', sans-serif;
       font-weight: 100;
+      font-style: normal;
       text-decoration-skip-ink: none;
       color: #e6e6e6;
     }
