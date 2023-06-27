@@ -452,25 +452,31 @@
         font-size: 30px;
       }
       
-      h1 {
-        font-size: 30px;          /* larger screens (width) */
-      }
-      
-      .home-p {
-        font-size: 20px;
-      }
-      
-      .goal-li {
-        font-size: 23px;
-      }
+    .home-p {
+      text-align: left;
+      font-size: 24px;
+    }
     
-      .goal-p {
-        font-size: 15px;
-      }
-      
-      #tip {
-        font-size: 20px;
-      }
+    .home-h1 {
+      font-size: 42px;
+      font-weight: 100;
+    }
+    
+    h1 {
+      font-size: 42px;
+      font-weight: 100;
+    }
+    
+    .goal-li {        /*really large screens*/ 
+      top: -20%;
+      font-size: 26px;
+      font-weight: 100;
+    }
+    
+    .goal-p {
+      font-size: 24px;
+      font-weight: 100;
+    }
       
     }
     
@@ -478,31 +484,24 @@
     @media screen and (min-width: 1024px) and (min-height: 650px) {
   
       .home-h1 {
-        font-size: 32px;
+        font-size: 48px;
       }
       
       h1 {
-        font-size: 32px;          /* larger screens (length and width*/
+        font-size: 48px;          /* larger screens (length and width*/
       }
       
       .home-p {
-        font-size: 22px;
+        font-size: 30px;
       }
       
       .goal-li {
-        font-size: 26px;
+        font-size: 30px;
       }
     
       .goal-p {
-        font-size: 18px;
-      }
-      
-      #tip {
-        font-size: 24px;
-      }
-    
-      
-      
+        font-size: 30px;
+      }      
 }
 
     @media screen and (max-width: 345px) and (max-height: 700px) {
