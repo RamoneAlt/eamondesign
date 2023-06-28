@@ -240,7 +240,7 @@
       }
       
       button {
-        font-weight: bold;
+        font-weight: 300;
         font-family: 'Affald', sans-serif;
         background-color: #006699;
         color: white;
@@ -252,7 +252,7 @@
       }
     
       button:hover {
-        font-weight: bold;
+        font-weight: 300;
         font-family: 'Affald', sans-serif;
         background-color: #024669;
         color: white;
