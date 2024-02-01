@@ -1,0 +1,227 @@
+body {
+  background-color: #3e1266;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  padding-top: 25px;
+  background-color: #551a8b;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The background for the middle of the page */
+
+.midground {
+  background-color: rgb(255, 209, 220);
+  padding-top: 1px;
+  padding-bottom: 4px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 17px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.uppermidground {
+  text-align: center;
+  padding-bottom: 4px;
+  padding-left: 18px;
+  padding-right: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .midground {
+    background-color: rgb(255, 209, 220);
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 17px;
+    width: 85%;
+    box-sizing: border-box;
+  }
+  .uppermidground {
+    text-align: center;
+    padding-bottom: 4px;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 85%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* Here is where texts are!! :D */
+
+.h1game {
+  text-decoration: underline dashed 7px rgba(85, 26, 139, 0.5);
+  transition: ease-in 0.15s;
+  color: black;
+  font-family: 'Bigshot One', serif;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.h1game:hover {
+  transition: ease-in-out 0.6s;
+  letter-spacing: 1px;
+}
+
+.phome {
+  color: rgba(77, 4, 33, 1);
+  font-family: 'Yeseva One', serif;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+/* LINKS TEXT */
+
+.aphome {
+  transition: 0.45s ease-in-out;
+  color: rgb(133, 12, 168);
+  font-family: 'Yeseva One', serif;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome:hover {
+  transition: 0.07s ease-in-out;
+  color: rgba(255, 195, 109);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome1 {
+  transition: 0.45s ease-in-out;
+  color: #1c15ab;
+  font-family: 'Yeseva One', serif;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome1:hover {
+  transition: 0.07s ease-in-out;
+  color: rgba(255, 195, 109);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome2 {
+  transition: 0.45s ease-in-out;
+  color: #15ab5d;
+  font-family: 'Yeseva One', serif;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome2:hover {
+  transition: 0.07s ease-in-out;
+  color: rgba(255, 195, 109);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome3 {
+  transition: 0.45s ease-in-out;
+  color: #ab152e;
+  font-family: 'Yeseva One', serif;
+  font-size: 1em;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome3:hover {
+  transition: 0.07s ease-in-out;
+  color: rgba(255, 195, 109);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome4 {
+  transition: 0.45s ease-in-out;
+  color: #9c15ab;
+  font-family: 'Yeseva One', serif;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+.aphome4:hover {
+  transition: 0.07s ease-in-out;
+  color: rgba(255, 195, 109);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+/* END OF LINKS TEXT */
+
+.h1bottom {
+  font-family: 'Yeseva One', serif;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  color: #906AB3;
+}
+
+.ahome {
+  transition: 0.25s ease-in-out;
+  font-family: 'Yeseva One', serif;
+  font-size: 0.85em;
+  color: #906AB3;
+  text-decoration: none;
+}
+
+.ahome:hover {
+  transition: 0.07s ease-in-out;
+  font-family: 'Yeseva One', serif;
+  font-size: 0.85em;
+  color: rgba(255, 195, 109, 1);
+  text-decoration: underline 3px;
+  text-decoration-skip-ink: none;
+}
+
+.titlehome {
+  text-decoration: underline 4px rgb(255, 209, 220);
+  transition: ease-in 1.15s;
+  color: rgb(255, 209, 220);
+  font-family: 'Bigshot One', serif;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+
+/* End of text changes :3 */
+
+hr {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.35);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  height: 4px;
+  width: 60%;
+}
+
