@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Affald';
+    src: url("../fonts/Affald.ttf") format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
 body {
   background-color: #3e1266;
   display: flex;
@@ -68,7 +75,8 @@ body {
   text-decoration: underline dashed 7px rgba(85, 26, 139, 0.5);
   transition: ease-in 0.15s;
   color: black;
-  font-family: 'Bigshot One', serif;
+  font-family: 'Affald', sans-serif;
+  /* font-family: 'Bigshot One', serif; */
   font-size: 3em;
   font-weight: 400;
 }
@@ -208,7 +216,7 @@ body {
   text-decoration: underline 4px rgb(255, 209, 220);
   transition: ease-in 1.15s;
   color: rgb(255, 209, 220);
-  font-family: 'Bigshot One', serif;
+  font-family: 'Affald', sans-serif; /* normally use Bigshot One */
   font-size: 3em;
   font-weight: 400;
 }
