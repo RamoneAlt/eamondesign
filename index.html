@@ -1,253 +1,57 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="styles/main.css">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/aboutme.css">
     <link rel="icon" href="https://i.ibb.co/3rKZYYL/eamondesignlogo.png" type="image/x-icon">
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Yeseva One' rel='stylesheet'>
+</head>
+<body>
 
-  <body>
-    
-    <script src="scripts/mainscroll.js"></script>
+<div class="container">
 
-    <!-- THIS IS THE NAVBAR SECTION; GET USED TO IT -->
+  <div class="uppermidground">
+    <h1 class="titlehome">Welcome!</h1>
+    <p class="phome"></p>
+  </div>
 
-    <div class="navbar">
-      <ul>
+  <div class="midground">
+    <h1 class="h1game">About Me!!!</h1>
+    <p class="phome">hello! i am eamon! this is the website of my games, <a href="https://www.example.com" class="aphome1" >small games</a>, <a href="https://www.example.com" class="aphome2" >big games</a>, and some <a href="https://www.example.com" class="aphome3" >other stuff sometimes too</a>. oh, and a <a href="https://www.example.com" class="aphome4" >blog</a> (in the works)!</p>
+  </div>
+  
+  <hr>
+  
+  <div class="midground">
+    <h1 class="h1game">Games</h1>
+    <p class="phome">I like gaems. And so i tend to make a lot of <a href="https://www.example.com" class="aphome" >GAMES</a>. i started making games in unity last year, but had made some previous games using rpg maker mv and also some web games with html and javascript. </p>
+  </div>
+  
+  <hr>
+  
+  <div class="midground">
+    <h1 class="h1game">Other Creations</h1>
+    <p class="phome">To be continued...</p>
+  </div>
 
-        <img class="navlogo" src="https://i.ibb.co/3rKZYYL/eamondesignlogo.png" height="48" width="48" style="margin-bottom: -17px;">
-        <li><span><a class="a" href="#Section0" target="_self">Home</a></span></li>
-        <li><span><a class="a" href="#Section1" target="_self">Games</a></span></li>
-        <li><span><a class="a" href="#Section2" target="_self">Poems</a></span></li>
-        <li><span><a class="a" href="#Section3" target="_self">Misc.</a></span></li>
-
-      </ul>
-    </div>
-
-    <script>
-      let prevScrollPos = window.pageYOffset;
-
-
-      const navbar = document.querySelector('.navbar');
-
-
-      function toggleNavbar() {
-        const currentScrollPos = window.pageYOffset;
-
-        if (prevScrollPos > currentScrollPos) {
-          // scroll up = show navbarrrr 
-          navbar.classList.remove('hidden');
-        } else {
-          // if down then it goes bye bye
-          navbar.classList.add('hidden');
-        }
-
-        // update the position of the bar
-        prevScrollPos = currentScrollPos;
-      }
-
-      // yipee (listener)
-      window.addEventListener('scroll', toggleNavbar);
-
-    </script>
-
-    <!-- END OF NAVBAR SECTION GET USED TO IT -->
-
-
-    <div class="banner">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Chyulu_Hills%2C_Kenya_%28Unsplash%29.jpg" alt="banner image of a beautiful sunset on the Chyulu Hills in Kenya ">
-    </div>
-
-    <!--Sec S.-->
-    <div class="container">
-
-      <div class="section40">
-        <div class="top-left-gradiant">
-          <h1 class="home-h1">
-            Welcome to EamonDesign!
-          </h1>
-          <p class="home-p">
-           Welcome to my website! It will be a place where I compile all of the (not really) interesting little things I do, from my word games to my poetry. Enjoy!
-          </p>
-        </div>
-      </div>
-
-
-      <div class="section60">
-        <div class="top-left">
-          <h1 class="home-h1">
-            What Is The Purpose?
-          </h1>
-          <p class="home-p">
-            Most of this website will be little interactive content others can play around with and stuff for myself to keep my things organized! :D
-          </p>
-        </div>
-      </div>
-      
-      <!-- end section 1 OWO -->
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <div class="section50">
-        <div class="text-bottom-left">
-          <h1 class="home-h1">
-            Really Happy Person --->
-          </h1>
-          <p class="home-p">
-            Hopefully, this site turns out well so I can look back on it and be like this person as they're accomplished, excited, and happy, as you can see from the thumbs up!
-          </p>
-          <button class="button" id="ButtonToSomething?"> Placeholder Button </button>
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      <div class="section50">
-          <img class="image-bottom-right" src="https://i.ibb.co/y8xxS8d/Screenshot-2023-06-27-232332.png" alt="Really happy person being happy with their thumbs up and everything! Wahoo!">
-      </div>
-      
-    </div>
-    <!--Sec E.-->
-    
-    <div class="container">
+  
+  <h1 class="h1bottom">
+  <a href="https://www.example.com" class="ahome" >Home (Don't Click This)</a>
+  ~ ~ ~
+  <a href="https://www.example.com" class="ahome" >Games</a>
+  </h1>
+  
+</div>
+  
     
     
-      <div class="section25">
-        <div class="top-left">
-          <h1 class="home-h1">
-            What do we do?
-          </h1>
-          <p class="home-p">
-            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
-          </p>
-        </div>
-      </div>
-      
-      <div class="section50">
-        <div class="top-left">
-          <h1 class="home-h1">
-            What do we do?
-          </h1>
-          <p class="home-p">
-            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
-          </p>
-        </div>
-      </div>
-      
-      <div class="section25">
-        <div class="top-left">
-          <h1 class="home-h1">
-            What do we do?
-          </h1>
-          <p class="home-p">
-            Through our website we inform and empower individuals to make a difference. We provide valuable information and ti
-          </p>
-        </div>
-      </div>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-    </div>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--Sec S.-->
     
-    <div class="container">
-
-      <div class="section60">
-        <p class="credit">
-          Photo: Robert S. Donovan, <a class="imglink" href="https://fnhscroll.org/2878/opinion/how-global-warming-is-affecting-us-and-how-we-can-help/#modal-photo">(CC BY 3.0)</a>
-        </p>
-        <img class="image-top-left" src="https://fnhscroll.org/wp-content/uploads/2022/11/xnYawPMJVl1cC0WNwMAGKlpMkSC4DYRWZhtIan1x.jpg" alt="Coal fired plant which is located on the Ohio River, west of Cincinnati">
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      <div class="section50">
-        <div class="text-top-right">
-          <h1 class="home-h1">
-            Long Term Issues
-          </h1>
-          <p class="home-p">
-            Explore the long-term consequences of the water crisis on our future. Discover how limited access to clean water affects development, health, education, and the environment.
-          </p>
-          <button class="button" id="LongTermIssues">Learn More </button>
-        </div>
-      </div>
-
-
-
-
-      <div class="section50">
-        <div class="text-bottom-left">
-          <h1 class="home-h1">
-            Personal Goals
-          </h1>
-          <p class="home-p">
-            Embark on your journey of protecting water resources. Here, you'll find practical tips and innovative strategies to integrate water-saving practices into your daily life. Set goals and make a difference, one drop at a time.
-          </p>
-          <button class="button" id="PersonalGoals">Learn More </button>
-        </div>
-      </div>
-      
-
-      <!--Sec E.-->
-    </div>
-
-  </body>
-
+    
+    
+    
+</body>
 </html>
