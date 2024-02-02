@@ -5,6 +5,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'EamonticonA';
+    src: url("../fonts/EamoticonA.ttf") format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+
 body {
   background-color: #3e1266;
   display: flex;
@@ -216,9 +224,9 @@ body {
   text-decoration: underline 4px rgb(255, 209, 220);
   transition: ease-in 1.15s;
   color: rgb(255, 209, 220);
-  font-family: 'Affald', sans-serif; /* normally use Bigshot One */
+  font-family: 'EamoticonA', sans-serif; /* normally use Bigshot One */
   font-size: 3em;
-  font-weight: 400;
+  font-weight: 100; /* normally 400 and affald  just testing right now :P */
 }
 
 
