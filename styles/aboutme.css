@@ -230,7 +230,6 @@ body {
 }
 
 .titlehomeb {
-  text-decoration: underline 4px rgb(255, 209, 220);
   transition: ease-in 1.15s;
   color: rgb(255, 209, 220);
   font-family: 'EamoticonA', sans-serif; /* normally use Bigshot One */
