@@ -224,9 +224,18 @@ body {
   text-decoration: underline 4px rgb(255, 209, 220);
   transition: ease-in 1.15s;
   color: rgb(255, 209, 220);
-  font-family: 'EamoticonA', sans-serif; /* normally use Bigshot One */
+  font-family: 'Affald', sans-serif; 
   font-size: 3em;
-  font-weight: 100; /* normally 400 and affald  just testing right now :P */
+  font-weight: 400; 
+}
+
+.titlehomeb {
+  text-decoration: underline 4px rgb(255, 209, 220);
+  transition: ease-in 1.15s;
+  color: rgb(255, 209, 220);
+  font-family: 'EamoticonA', sans-serif; /* normally use Bigshot One */
+  font-size: 2.25em;
+  font-weight: 100; 
 }
 
 
