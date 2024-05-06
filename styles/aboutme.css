@@ -101,6 +101,13 @@ body {
   font-weight: 600;
 }
 
+.phomesmall {
+  color: rgba(77, 4, 33, 1);
+  font-family: 'Yeseva One', serif;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
 /* LINKS TEXT */
 
 .aphome {
