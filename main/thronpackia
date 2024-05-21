@@ -1,0 +1,151 @@
+<html> <!-- Brought to you by Eamon, May 2024 -->
+<head>
+    <title>It's An Anagram</title>
+    <style> /* Colors all inspired by 2013 Gateless Website */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+        }
+        .container {
+            color: #799486;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #947979;
+            border-radius: 5px;
+        }
+        textarea {
+            color: #E6E6E6;
+            background-color: #948E79;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .b {
+            background-color: #799486;
+        }
+        button {
+            color: #D3D3D3;
+            background-color: #767676;
+            cursor: pointer;
+        }
+        button:hover {
+            color: #B0BEB7;
+            background-color: #798094;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thron Packia</h1>
+        <label for="inputText">Enter Text:</label>
+        <textarea id="inputText" rows="4" cols="50"></textarea><br>
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button><br>
+        <label for="outputText">Output:</label>
+        <textarea class="b" id="outputText" rows="4" cols="50" readonly></textarea>
+    </div>
+    <script>
+        const customEncryption = {
+            a: '1i',
+            b: 'f5',
+            c: 'o9',
+            d: '8r',
+            e: 'g1',
+            f: '4h',
+            g: 'p0',
+            h: '7g',
+            i: '6t',
+            j: '5y',
+            k: 'x2',
+            l: 'u0',
+            m: 'w9',
+            n: 'a2', // a2 + b9 + 1i + 7g = 12 29 1997
+            o: 'b9',
+            p: '3f',
+            q: '5a',
+            r: 'j8',
+            s: 'v7',
+            t: '2k',
+            u: 'e3',
+            v: '4z',
+            w: '4n',
+            x: 'l6',
+            y: 's1',
+            z: '9q',
+            ' ': '-',
+            1: 'bb1',
+            2: 'cc7',
+            3: 'ff3',
+            4: 'gg5',
+            5: 'hh9',
+            6: 'mm2',
+            7: 'qq4',
+            8: 'uu8',
+            9: 'tt6',
+            0: 'ecb',
+            '!': '00',
+            '?': '0a',
+            '.': '0g',
+            ',': '0f',
+            '#': 'zb',
+            '-': 'zr',
+	    '+': 'zq',
+            '=': 'zp',
+            '*': 'zs',
+            '/': 'zv',
+            '&': 'ze',
+            '^': 'zn',
+            '(': 'zrt',
+            ')': 'zft',
+            '[': 'rtz',
+            ']': 'ftz',
+            '$': 'zh',
+            '"': 'z3z3',
+            "'": 'm1m1',
+            '|':'zo',
+            '>': 'zx',
+            '<': 'zz',
+            '`': 'zi',
+            '~': 'zt',
+            '@': 'zj',
+            '_': 'zr2',
+            '{': 'tzr',
+            '}': 'tzf',
+            ':': '0z',
+            ';': '0y',
+            '%': '0k', 
+        };
+        // encrypting of the text
+        function encrypt() {
+            const inputText = document.getElementById('inputText').value.toLowerCase();
+            let outputText = '';
+            for (let i = 0; i < inputText.length; i++) {
+                const char = inputText[i];
+                if (char in customEncryption) {
+                    outputText += customEncryption[char] + ' ';
+                } else {
+                    outputText += char + ' ';
+                }
+            }
+            document.getElementById('outputText').value = outputText.trim();
+        }
+        // decrypting of the encrypted text
+        function decrypt() {
+            const inputText = document.getElementById('inputText').value.trim();
+            const inputArray = inputText.split(' ');
+            let outputText = '';
+
+            for (let i = 0; i < inputArray.length; i++) {
+                const value = inputArray[i];
+                for (const key in customEncryption) {
+                    if (customEncryption[key] == value) {
+                        outputText += key;
+                        break;
+                    }
+                }
+            }
+            document.getElementById('outputText').value = outputText;
+        }
+    </script>
+</body>
+</html>
